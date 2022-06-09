@@ -1,0 +1,30 @@
+{
+  "name": "flus",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@thanpolas/univ3prices": "^3.0.2",
+    "@types/react": "^18.0.11",
+    "@uniswap/sdk-core": "^3.0.1",
+    "@uniswap/v3-sdk": "^3.8.2",
+    "bignumber.js": "^9.0.2",
+    "bulma": "^0.9.4",
+    "ethers": "^5.6.8",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3",
+    "web3": "^1.7.3"
+  },
+  "devDependencies": {
+    "eslint": "8.16.0",
+    "eslint-config-next": "12.1.6"
+  }
+}
