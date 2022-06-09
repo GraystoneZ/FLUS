@@ -23,7 +23,7 @@ export default function flus() {
                         <div className='tile is-child box has-text-centered'>
                             <h1 className='title'>Arbitrage</h1>
                             <div className='block'>
-                                <p>What is arbitrage</p>
+                                <p>Spot price difference among exchanges, gain profit with no cost!</p>
                             </div>
                             <Link href='/arbitrage'>
                                 <button className='button is-primary'>Go</button>
@@ -32,7 +32,7 @@ export default function flus() {
                         <div className='tile is-child box has-text-centered'>
                             <h1 className='title'>Self-Liquidation</h1>
                             <div className='block'>
-                                <p>What is self-liquidation</p>
+                                <p>Liquidate yourself with low fee!</p>
                             </div>
                             <Link href='/self_liquidation'>
                                 <button className='button is-primary'>Go</button>

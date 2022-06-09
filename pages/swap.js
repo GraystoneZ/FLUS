@@ -6,7 +6,6 @@ import { ethers } from 'ethers'
 import BigNumber from 'bignumber.js'
 import { uniswapV1TokenList, uniswapV3TokenList } from './token_list'
 import { uniswapV1FactoryABI, uniswapV1ExchangeABI, uniswapV1TokenABI } from './contract'
-import { web3 } from './navi'
 
 
 export default function Swap({ isInputEditable, tokenFromPar, amountFromPar, setExchangePar, setTokenFromPar,  setAmountFromPar , setTokenToPar, setAmountToPar}) { //

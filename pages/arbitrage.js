@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import 'bulma/css/bulma.css'
-import Navi, { web3 } from './navi'
+import Navi from './navi'
 import Header from './header'
 import Swap from './swap'
 import Borrow from './flashloan_borrow'
@@ -47,7 +47,7 @@ export default function arbitrage() {
             
             <section className='section is-small'>
                 <h1 className='title is-1 has-text-centered'>Arbitrage</h1>
-                <h2 className='subtitle is-4 has-text-centered'>What is arbitrage?</h2>
+                <h2 className='subtitle is-4 has-text-centered'>Spot price difference among exchanges, gain profit with no cost!</h2>
             </section>
 
             <div className='columns is-centered'>
