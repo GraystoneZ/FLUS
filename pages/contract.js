@@ -473,6 +473,620 @@ export const arbitrageABI = [
 	}
 ]
 
+export const flashloanABI = [
+	{
+	   "inputs": [],
+	   "stateMutability": "nonpayable",
+	   "type": "constructor"
+	},
+	{
+	   "anonymous": false,
+	   "inputs": [
+		  {
+			 "indexed": true,
+			 "internalType": "address",
+			 "name": "_from",
+			 "type": "address"
+		  },
+		  {
+			 "indexed": true,
+			 "internalType": "address",
+			 "name": "_assetAddress",
+			 "type": "address"
+		  },
+		  {
+			 "indexed": false,
+			 "internalType": "uint256",
+			 "name": "amount",
+			 "type": "uint256"
+		  }
+	   ],
+	   "name": "LogWithdraw",
+	   "type": "event"
+	},
+	{
+	   "anonymous": false,
+	   "inputs": [
+		  {
+			 "indexed": true,
+			 "internalType": "address",
+			 "name": "previousOwner",
+			 "type": "address"
+		  },
+		  {
+			 "indexed": true,
+			 "internalType": "address",
+			 "name": "newOwner",
+			 "type": "address"
+		  }
+	   ],
+	   "name": "OwnershipTransferred",
+	   "type": "event"
+	},
+	{
+	   "inputs": [],
+	   "name": "addressesProvider",
+	   "outputs": [
+		  {
+			 "internalType": "contract ILendingPoolAddressesProviderV1",
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "inputs": [
+		  {
+			 "internalType": "address",
+			 "name": "_reserve",
+			 "type": "address"
+		  },
+		  {
+			 "internalType": "uint256",
+			 "name": "_amount",
+			 "type": "uint256"
+		  },
+		  {
+			 "internalType": "uint256",
+			 "name": "_fee",
+			 "type": "uint256"
+		  },
+		  {
+			 "internalType": "bytes",
+			 "name": "_params",
+			 "type": "bytes"
+		  }
+	   ],
+	   "name": "executeOperation",
+	   "outputs": [],
+	   "stateMutability": "nonpayable",
+	   "type": "function"
+	},
+	{
+	   "inputs": [],
+	   "name": "flashloan",
+	   "outputs": [],
+	   "stateMutability": "nonpayable",
+	   "type": "function"
+	},
+	{
+	   "inputs": [],
+	   "name": "owner",
+	   "outputs": [
+		  {
+			 "internalType": "address",
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "inputs": [],
+	   "name": "renounceOwnership",
+	   "outputs": [],
+	   "stateMutability": "nonpayable",
+	   "type": "function"
+	},
+	{
+	   "inputs": [
+		  {
+			 "internalType": "address",
+			 "name": "newOwner",
+			 "type": "address"
+		  }
+	   ],
+	   "name": "transferOwnership",
+	   "outputs": [],
+	   "stateMutability": "nonpayable",
+	   "type": "function"
+	},
+	{
+	   "inputs": [
+		  {
+			 "internalType": "address",
+			 "name": "_assetAddress",
+			 "type": "address"
+		  }
+	   ],
+	   "name": "withdraw",
+	   "outputs": [],
+	   "stateMutability": "nonpayable",
+	   "type": "function"
+	},
+	{
+	   "stateMutability": "payable",
+	   "type": "receive"
+	}
+ ]
+
+export const selfLiquidationABI = [
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "TOKEN_ADDRESS",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "KOVAN_ETH_ADDRESS",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "uniswapFactoryB",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "exchangeB",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "DAI_ADDRESS",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "dexB_string",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "string"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "UNISWAP_FACTORY_A",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": false,
+	   "inputs": [
+		  {
+			 "name": "_assetAddress",
+			 "type": "address"
+		  }
+	   ],
+	   "name": "withdraw",
+	   "outputs": [],
+	   "payable": false,
+	   "stateMutability": "nonpayable",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "exchangeA",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "uniswapFactoryA",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "bat_string",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "string"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": false,
+	   "inputs": [],
+	   "name": "renounceOwnership",
+	   "outputs": [],
+	   "payable": false,
+	   "stateMutability": "nonpayable",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "amount_to_repay_DAI",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "uint256"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "UNISWAP_FACTORY_B",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "owner",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "isOwner",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "bool"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "dexA_string",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "string"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "lendingPool",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "eth_string",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "string"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "dai_string",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "string"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "addressesProvider",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": false,
+	   "inputs": [
+		  {
+			 "name": "amount",
+			 "type": "uint256"
+		  }
+	   ],
+	   "name": "makeLiquidation",
+	   "outputs": [],
+	   "payable": false,
+	   "stateMutability": "nonpayable",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "BAT_ADDRESS",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "AAVE_V2_LENDINGPOOL",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "address"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "amount_to_withdraw_ETH",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "uint256"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "constant": false,
+	   "inputs": [
+		  {
+			 "name": "_reserve",
+			 "type": "address"
+		  },
+		  {
+			 "name": "_amount",
+			 "type": "uint256"
+		  },
+		  {
+			 "name": "_fee",
+			 "type": "uint256"
+		  },
+		  {
+			 "name": "_params",
+			 "type": "bytes"
+		  }
+	   ],
+	   "name": "executeOperation",
+	   "outputs": [],
+	   "payable": false,
+	   "stateMutability": "nonpayable",
+	   "type": "function"
+	},
+	{
+	   "constant": false,
+	   "inputs": [
+		  {
+			 "name": "newOwner",
+			 "type": "address"
+		  }
+	   ],
+	   "name": "transferOwnership",
+	   "outputs": [],
+	   "payable": false,
+	   "stateMutability": "nonpayable",
+	   "type": "function"
+	},
+	{
+	   "constant": true,
+	   "inputs": [],
+	   "name": "none_string",
+	   "outputs": [
+		  {
+			 "name": "",
+			 "type": "string"
+		  }
+	   ],
+	   "payable": false,
+	   "stateMutability": "view",
+	   "type": "function"
+	},
+	{
+	   "inputs": [],
+	   "payable": false,
+	   "stateMutability": "nonpayable",
+	   "type": "constructor"
+	},
+	{
+	   "payable": true,
+	   "stateMutability": "payable",
+	   "type": "fallback"
+	},
+	{
+	   "anonymous": false,
+	   "inputs": [
+		  {
+			 "indexed": false,
+			 "name": "amount",
+			 "type": "uint256"
+		  }
+	   ],
+	   "name": "Profit",
+	   "type": "event"
+	},
+	{
+	   "anonymous": false,
+	   "inputs": [
+		  {
+			 "indexed": true,
+			 "name": "_from",
+			 "type": "address"
+		  },
+		  {
+			 "indexed": true,
+			 "name": "_assetAddress",
+			 "type": "address"
+		  },
+		  {
+			 "indexed": false,
+			 "name": "amount",
+			 "type": "uint256"
+		  }
+	   ],
+	   "name": "LogWithdraw",
+	   "type": "event"
+	},
+	{
+	   "anonymous": false,
+	   "inputs": [
+		  {
+			 "indexed": true,
+			 "name": "previousOwner",
+			 "type": "address"
+		  },
+		  {
+			 "indexed": true,
+			 "name": "newOwner",
+			 "type": "address"
+		  }
+	   ],
+	   "name": "OwnershipTransferred",
+	   "type": "event"
+	}
+ ]
+
 export const uniswapV1FactoryABI = [
 	{
 	  name: 'NewExchange',

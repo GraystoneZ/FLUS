@@ -50,9 +50,9 @@ export default function flus() {
                             </Link>
                         </div>
                         <div className='tile is-child box has-text-centered'>
-                            <h1 className='title'>Interest Rate Swap</h1>
+                            <h1 className='title'>Flashloan Only</h1>
                             <div className='block'>
-                                <p>What is interest rate swap</p>
+                                <p>Only do flashloan to check the transaction</p>
                             </div>
                             <Link href='/interest_rate_swap'>
                                 <button className='button is-primary'>Go</button>

@@ -33,7 +33,19 @@ export default function arbitrage() {
         const arbitrageContract2 = new ethers.Contract(contractAddress, arbitrageABI, signer)
         const borrowDecimals = uniswapV1TokenList.find(token => token.name === borrowToken).decimals
         const borrowAmountNum = ethers.utils.parseUnits(borrowAmount, borrowDecimals).toNumber()
-        await arbitrageContract2.makeArbitrage(borrowToken, firstSwapTokenTo, firstDex, secondDex, borrowAmountNum)
+        let firstDex_, secondDex_
+        if (firstDex === 'Uniswap V1 A') {
+            firstDex_ = 'A'
+        } else if (firstDex === 'Uniswap V1 B') {
+            firstDex_ = 'B'
+        }
+        
+        if (secondDex === 'Uniswap V1 A') {
+            secondDex_ = 'A'
+        } else if (secondDex === 'Uniswap V1 B') {
+            secondDex_ = 'B'
+        } 
+        await arbitrageContract2.makeArbitrage(borrowToken, firstSwapTokenTo, firstDex_, secondDex_, borrowAmountNum)
         //await arbitrageContract2.makeArbitrage('DAI', 'ETH', 'B', 'A', 100000000)
         //arbitrageContract.someFunction(borrowToken, borrowAmount, firstDex, firstSwapTokenTo, secondDex)
 

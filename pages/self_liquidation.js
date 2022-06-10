@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import 'bulma/css/bulma.css'
-import Navi, { web3 } from './navi'
+import Navi from './navi'
 import Header from './header'
 import Borrow from './flashloan_borrow'
 import Repay from './flashloan_repay'
@@ -8,7 +8,9 @@ import Swap from './swap'
 import LendingCheck from './lending_check'
 import WithdrawCheck from './withdraw_check'
 import React, { useState, useEffect } from 'react'
+import { ethers } from 'ethers'
 import { uniswapV1TokenList } from './token_list'
+import { selfLiquidationABI } from './contract'
 
 export default function selfLiquidation() {
     
@@ -21,7 +23,14 @@ export default function selfLiquidation() {
     const [dex, setDex] = useState('')
 
     const run = async () => {
-        console.log("hello")
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        const signer = provider.getSigner()
+        const contractAddress = '0x0A3b67ecFe15F7b318104C0ACFe2c61245F5b1Cb'
+        
+        const selfLiquidationContract = new ethers.Contract(contractAddress, selfLiquidationABI, signer)
+        const borrowDecimals = uniswapV1TokenList.find(token => token.name === borrowToken).decimals
+        const borrowAmountNum = ethers.utils.parseUnits(borrowAmount, borrowDecimals).toNumber()
+        await selfLiquidationContract.makeLiquidation(borrowAmountNum)
     }
 
     return (
